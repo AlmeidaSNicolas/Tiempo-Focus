@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# Pomodoro (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto **Pomodoro** desenvolvido durante um curso da **Udemy**, usando **React**.
 
-Currently, two official plugins are available:
+## Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Este repositório contém a implementação (em andamento) de uma aplicação de Pomodoro, com foco em praticar conceitos do ecossistema React (componentização, estilos e organização do projeto).
 
-## React Compiler
+## Tecnologias e bibliotecas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React**: UI (`react`, `react-dom`)
+- **Vite**: bundler/dev server
+- **TypeScript**: tipagem estática
+- **Lucide Icons**: ícones via `lucide-react` (ex.: `TimerIcon`)
+- **ESLint**: linting do código
+- **CSS**: estilos globais e **CSS Modules** (ex.: `src/components/Heading.module.css`)
 
-## Expanding the ESLint configuration
+## Como rodar o projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Pré-requisito: **Node.js** (recomendado LTS).
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1) Instale as dependências:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2) Rode em modo desenvolvimento:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+3) Build de produção:
+
+```bash
+npm run build
+```
+
+4) Pré-visualização do build:
+
+```bash
+npm run preview
+```
+
+## Estrutura (resumo)
+
+- `src/main.tsx`: bootstrap do React
+- `src/App.tsx`: componente principal
+- `src/components/`: componentes reutilizáveis (ex.: `Heading`)
+- `src/styles/`: estilos globais/tema
