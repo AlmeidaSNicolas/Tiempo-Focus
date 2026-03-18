@@ -1,51 +1,33 @@
-# Pomodoro (React)
+# ⏱️ PomoNs - React Pomodoro Timer
 
-Projeto **Pomodoro** desenvolvido durante um curso da **Udemy**, usando **React**.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
 
-## Sobre o projeto
+Um sofisticado Timer de Pomodoro focado em gestão de tempo e produtividade. Desenvolvido para aplicar e solidificar conceitos avançados de React, TypeScript e componentização, baseado nos ensinamentos do curso de React JS do professor Luiz Otávio Miranda.
 
-Este repositório contém a implementação (em andamento) de uma aplicação de Pomodoro, com foco em praticar conceitos do ecossistema React (componentização, estilos e organização do projeto).
+## 🚀 Tecnologias e Ferramentas
 
-## Tecnologias e bibliotecas
+Este projeto foi construído utilizando as seguintes tecnologias do ecossistema moderno de front-end:
 
-- **React**: UI (`react`, `react-dom`)
-- **Vite**: bundler/dev server
-- **TypeScript**: tipagem estática
-- **Lucide Icons**: ícones via `lucide-react` (ex.: `TimerIcon`)
-- **ESLint**: linting do código
-- **CSS**: estilos globais e **CSS Modules** (ex.: `src/components/Heading.module.css`)
+* **[React JS](https://reactjs.org/):** Biblioteca principal para a construção da interface do usuário.
+* **[TypeScript](https://www.typescriptlang.org/):** Tipagem estática para garantir segurança, previsibilidade de código e maior produtividade no desenvolvimento.
+* **[Vite](https://vitejs.dev/):** Ferramenta de build e dev server incrivelmente rápida.
+* **CSS Modules:** Para uma estilização escopada, organizada e livre de conflitos de classes.
 
-## Como rodar o projeto
+## 🧠 Conceitos e Práticas Aplicadas
 
-Pré-requisito: **Node.js** (recomendado LTS).
+Durante a construção deste software, foram implementados os seguintes conceitos:
 
-1) Instale as dependências:
+* **React Hooks Avançados:** Domínio de estados e ciclos de vida com `useState`, `useEffect` e `useCallback`.
+* **Gerenciamento de Tempo:** Controle preciso de intervalos e *timers* na web utilizando as APIs nativas (`setInterval`, `clearInterval`).
+* **Design de Componentes:** Arquitetura baseada em componentes reutilizáveis e independentes (Padrão de exportação em `index.tsx`).
+* **Tipagem Rigorosa:** Uso de `Interfaces` e tipos nativos do HTML via TypeScript (como `ButtonHTMLAttributes`) para construir componentes base robustos.
 
-```bash
-npm install
-```
 
-2) Rode em modo desenvolvimento:
+📝 Licença
+Este projeto foi desenvolvido com foco educacional e portfólio. Sinta-se à vontade para explorar, clonar e inspecionar o código-fonte!
 
-```bash
-npm run dev
-```
 
-3) Build de produção:
 
-```bash
-npm run build
-```
 
-4) Pré-visualização do build:
-
-```bash
-npm run preview
-```
-
-## Estrutura (resumo)
-
-- `src/main.tsx`: bootstrap do React
-- `src/App.tsx`: componente principal
-- `src/components/`: componentes reutilizáveis (ex.: `Heading`)
-- `src/styles/`: estilos globais/tema
