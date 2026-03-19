@@ -11,10 +11,11 @@ import './styles/global.css';
 import './styles/theme.css';
 import Footer from './components/Footer';
 
+
 export default function App() {
+    
     return (
        <>
-        
          <Container>
             <Logo />
          </Container>
@@ -31,7 +32,7 @@ export default function App() {
         <Container>
             < form className='form' action=''>
                 <div className='formRow'>
-                    <DefaultInput labelText='task' id='input' type='text' placeholder='Digite Algo'/>
+                    <DefaultInput labelText= 'Tarefa' id='input' type='text' placeholder='Digite Algo'/>
                 </div>
 
                 <div className='formRow'>

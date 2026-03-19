@@ -8,7 +8,7 @@ export default function Logo(){
 
         <a className={styles.logoLink} href=''>
             <TimerIcon  />
-            <span>PomoNs</span>
+            <span>Tiempo Focus</span>
         </a>
 
        </div>
