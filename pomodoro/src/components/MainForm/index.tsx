@@ -5,7 +5,7 @@ import { PlayCircleIcon } from "lucide-react"
 
 export function MainForm(){
     return(
-    <>   
+    <> 
           < form className='form' action=''>
                         <div className='formRow'>
                             <DefaultInput labelText= 'Tarefa' id='input' type='text' placeholder='Digite Algo'/>

@@ -4,7 +4,7 @@ import { MainForm } from "../../components/MainForm";
 import MainTemplate from "../../Templates/MainTemplate";
 
 
-export default function Home() {
+export default function Home(){
     
     return (
        <MainTemplate>

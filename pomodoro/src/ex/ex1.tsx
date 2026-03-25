@@ -71,3 +71,10 @@ export default function AuthGuard({children, isLogged}: AuthGuardProps){
         </div>
     )
 }
+
+//Exercício 1: Componente de Layout (Props e ReactNode)
+//O objetivo aqui é criar um componente chamado MainLayout. Ele deve servir como uma "moldura" para a sua aplicação.
+//Tarefa: Crie o componente MainLayout.
+//Requisito de Props: Ele deve aceitar uma prop chamada children (do tipo React.ReactNode) e uma prop de string chamada pageTitle.
+//Estrutura: Dentro do componente, renderize um <header> com o pageTitle e um <main> onde o children será exibido.
+
