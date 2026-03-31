@@ -3,18 +3,54 @@ import { DefaultButton } from "../DefaultButton"
 import { Cycles } from "../Cycles"
 import { PlayCircleIcon } from "lucide-react"
 import { useRef } from "react"
+import type { TaskModel } from "../../models/TaskModel"
+import { useTaskContext } from "../../contexts/TaskContext/useTaskContext"
 
 
 export function MainForm(){
-
+    const { setState } = useTaskContext();
     const taskNameInput = useRef<HTMLInputElement>(null);
 
     //const [taskName, setTaskName] = useState(''); achei que assim seria melhor, mas pra validação do input, o ideal é usar o useRef, pois ele tem acesso direto ao elemento do DOM, e não precisa ficar renderizando o componente toda vez que o valor do input mudar, como acontece com o useState.
 
-    function handleCreateNewTask(event: React.SubmitEvent<HTMLFormElement>){
+    function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>){
         event.preventDefault();
 
-        console.log('deu certo');
+        const taskName = taskNameInput.current?.value.trim();
+
+         if(taskName === null)return;
+
+        if(!taskName){
+            alert('Digite o nome de sua tarefa');
+            return;
+        }
+        
+
+        const newTask: TaskModel = {
+            id: Date.now().toString(),
+            name: taskName,
+            completeDate: null,
+            interruptDate: null,
+            duration: 1,
+            startDate: Date.now(),
+            type: "workTime",
+        }
+
+        const secondsRemaining = newTask.duration * 60;
+
+        setState((prevState) => {
+            return {
+                ...prevState,
+                activeTask: newTask,
+                currentCycle: 1, //ver depois 
+                secondsRemaining,
+                formattedSecondsRemaining: '00:00',
+                tasks: [...prevState.tasks, newTask],
+            }
+        })
+
+        
+
     }
     return(
     <> 
