@@ -2,14 +2,20 @@ import { DefaultInput } from "../DefaultInput"
 import { DefaultButton } from "../DefaultButton"
 import { Cycles } from "../Cycles"
 import { PlayCircleIcon } from "lucide-react"
-import { useRef } from "react"
+import React, { useRef } from "react"
 import type { TaskModel } from "../../models/TaskModel"
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext"
+import { getNextCycle } from "../../utils/getNextCycle"
+import { getNextCycleType } from "../../utils/getNextCycleType"
+import { formatSecondsToMinutes } from "../../utils/formatSecondsToMinutes"
 
 
 export function MainForm(){
-    const { setState } = useTaskContext();
+    const { state, setState } = useTaskContext();
     const taskNameInput = useRef<HTMLInputElement>(null);
+
+    const nextCycle = getNextCycle(state.currentCycle);
+    const nextCycleType = getNextCycleType(nextCycle);
 
     //const [taskName, setTaskName] = useState(''); achei que assim seria melhor, mas pra validação do input, o ideal é usar o useRef, pois ele tem acesso direto ao elemento do DOM, e não precisa ficar renderizando o componente toda vez que o valor do input mudar, como acontece com o useState.
 
@@ -31,9 +37,9 @@ export function MainForm(){
             name: taskName,
             completeDate: null,
             interruptDate: null,
-            duration: 1,
+            duration: state.config[nextCycleType],
             startDate: Date.now(),
-            type: "workTime",
+            type: nextCycleType,
         }
 
         const secondsRemaining = newTask.duration * 60;
@@ -42,9 +48,9 @@ export function MainForm(){
             return {
                 ...prevState,
                 activeTask: newTask,
-                currentCycle: 1, //ver depois 
+                currentCycle: nextCycle,  
                 secondsRemaining,
-                formattedSecondsRemaining: '00:00',
+                formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining),
                 tasks: [...prevState.tasks, newTask],
             }
         })
@@ -62,6 +68,7 @@ export function MainForm(){
                             type='text' 
                             placeholder='Digite o nome da tarefa'
                             ref={taskNameInput}
+                            disabled={!!state.activeTask}
                             //value={taskName} 
                             //onChange={(e) => setTaskName(e.target.value)}
                             />
