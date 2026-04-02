@@ -7,8 +7,8 @@ export const initialTaskState: TaskStateModel = {
     activeTask: null,
     currentCycle: 0, //inicie como 1,2,3 ... 8  =>1 
     config: {
-        workTime: 25,
-        shortBreakTime: 5,
-        longBreakTime: 15
+        workTime: 30,
+        shortBreakTime: 10,
+        longBreakTime: 40
     },
 }

@@ -1,7 +1,7 @@
 import { DefaultInput } from "../DefaultInput"  
 import { DefaultButton } from "../DefaultButton"
 import { Cycles } from "../Cycles"
-import { PlayCircleIcon } from "lucide-react"
+import { PlayCircleIcon, StopCircleIcon } from "lucide-react"
 import React, { useRef } from "react"
 import type { TaskModel } from "../../models/TaskModel"
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext"
@@ -54,10 +54,20 @@ export function MainForm(){
                 tasks: [...prevState.tasks, newTask],
             }
         })
-
-        
-
     }
+
+    function handleInterruptTask(){
+        setState((prevState) => {
+            return {
+                ...prevState,
+                activeTask: null,
+                currentCycle: nextCycle,  
+                secondsRemaining: 0,
+                formattedSecondsRemaining: formatSecondsToMinutes(state.config[nextCycleType] * 60),
+            }
+        })
+    }
+
     return(
     <> 
           <form onSubmit={handleCreateNewTask} className='form' action=''>
@@ -75,15 +85,36 @@ export function MainForm(){
                         </div>
         
                         <div className='formRow'>
-                           <p>Lorem ipsum dolor sit amet.</p>
+                           <p>seu proximo intervalo é de 25min</p>
                         </div>
         
+
+                        {state.currentCycle > 0 && (
                         <div className='formRow'>
                           <Cycles />
                         </div>
-        
+                        )}
+
                         <div className='formRow'>
-                           <DefaultButton icon={<PlayCircleIcon />} />
+                            {!state.activeTask ? (
+                           <DefaultButton
+                            aria-label="Iniciar nova tarefa"
+                            title="Iniciar nova tarefa"
+                            type="submit"
+                            icon={<PlayCircleIcon
+                            key='botao de submit'   
+                            />} />
+                           ) : (
+                            <DefaultButton
+                            aria-label="Interromper tarefa atual" 
+                            title="Interromper Tarefa atual"
+                            type="button"
+                            icon={<StopCircleIcon />}
+                            color='red'
+                            key='Nao reenviar o form'
+                            onClick={handleInterruptTask}
+                            />
+                           )}
                         </div>
                     </form>
     </>                

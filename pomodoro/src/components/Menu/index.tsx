@@ -21,7 +21,6 @@ export default function Menu(){
     }
 
     useEffect(() =>{
-        console.log('theme mudou ', Date.now());
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
     }, [theme])    //executa apenas quando o valor de theme muda
