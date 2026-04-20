@@ -8,6 +8,7 @@ import { useTaskContext } from "../../contexts/TaskContext/useTaskContext"
 import { getNextCycle } from "../../utils/getNextCycle"
 import { getNextCycleType } from "../../utils/getNextCycleType"
 import { TaskActionsType } from "../../contexts/TaskContext/taskActions"
+import { Tips } from "../tips"
 
 
 export function MainForm(){
@@ -16,6 +17,9 @@ export function MainForm(){
 
     const nextCycle = getNextCycle(state.currentCycle);
     const nextCycleType = getNextCycleType(nextCycle);
+
+    //tips
+
 
     //const [taskName, setTaskName] = useState(''); achei que assim seria melhor, mas pra validação do input, o ideal é usar o useRef, pois ele tem acesso direto ao elemento do DOM, e não precisa ficar renderizando o componente toda vez que o valor do input mudar, como acontece com o useState.
 
@@ -64,7 +68,7 @@ export function MainForm(){
                         </div>
         
                         <div className='formRow'>
-                           <p>seu proximo intervalo é de 25min</p>
+                           <Tips />
                         </div>
         
 
