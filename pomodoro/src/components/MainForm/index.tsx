@@ -66,7 +66,7 @@ export function MainForm(){
                             disabled={!!state.activeTask}
                             />
                         </div>
-        
+                        
                         <div className='formRow'>
                            <Tips />
                         </div>

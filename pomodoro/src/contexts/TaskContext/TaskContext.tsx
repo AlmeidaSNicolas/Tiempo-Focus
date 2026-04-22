@@ -15,4 +15,3 @@ const initialContextValue: TaskContextProps = {
 
 
 export const TaskContext = createContext<TaskContextProps>(initialContextValue);
-
