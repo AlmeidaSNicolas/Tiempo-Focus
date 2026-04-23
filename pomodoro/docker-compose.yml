@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    ports:
+      - "4173:4173" # Mapeia a porta do Vite para o navegador
+    volumes:
+      - .:/app # Sincroniza o código local com o container
+      - /app/node_modules # Protege as dependências do container
+    environment:
+      - CHOKIDAR_USEPOLLING=true # Garante que o Docker no Windows perceba a mudança de arquivos
+    command: npm run dev -- --host # Sobrescreve o CMD do Dockerfile para usar o modo dev

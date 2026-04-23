@@ -28,11 +28,11 @@ export default function Menu(){
 
     return(
        <nav className={styles.menu}>
-        <a className={styles.menuLink} href='' aria-label='Ir para a Home' title='Ir para a Home'>
+        <a className={styles.menuLink} href='/' aria-label='Ir para a Home' title='Ir para a Home'>
             <HouseIcon  />
         </a>
 
-        <a className={styles.menuLink} href='' aria-label='Ver Historico' title='Ver Historico'>
+        <a className={styles.menuLink} href='historico' aria-label='Ver Historico' title='Ver Historico'>
             <HistoryIcon  />
         </a>
 
