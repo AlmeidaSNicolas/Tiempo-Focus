@@ -39,6 +39,8 @@ export function TaskContextProvider({children}: TaskContextProviderProps){
             worker.terminate();
         }
 
+        document.title = `${state.formattedSecondsRemaining} - Tiempo Focus`;
+
         worker.postMessage(state);
     }, [ worker ,state])
 
