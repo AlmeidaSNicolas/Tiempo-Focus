@@ -37,6 +37,7 @@ Rode o comando abaixo para empacotar a aplicação:
 
 Bash
 docker build -t tiempo-focus .
+
 3️⃣ Suba o Container:
 Agora, vamos mapear a porta do Vite e colocar a aplicação no ar:
 
