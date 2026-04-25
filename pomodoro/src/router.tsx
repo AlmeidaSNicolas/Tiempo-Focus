@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import Home from "./Pages/Home";
 import { AboutPomodoro } from "./Pages/AboutPomodoro";
 import { NotFound } from "./Pages/NotFound";
+import { History } from "./Pages/History";
 
 
 export const router = createBrowserRouter([
@@ -21,8 +22,8 @@ export const router = createBrowserRouter([
                 element: <NotFound />
             },
             {
-                path: 'history',
-                element: <NotFound />
+                path: 'History',
+                element: <History />
             }
         ]
     }

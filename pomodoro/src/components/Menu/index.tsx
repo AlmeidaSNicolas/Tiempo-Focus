@@ -33,7 +33,7 @@ export default function Menu(){
             <HouseIcon  />
         </Link>
 
-        <Link className={styles.menuLink} to='/history' aria-label='Ver Historico' title='Ver Historico'>
+        <Link className={styles.menuLink} to='/History' aria-label='Ver Historico' title='Ver Historico'>
             <HistoryIcon  />
         </Link>
 
