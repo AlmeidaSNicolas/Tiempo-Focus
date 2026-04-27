@@ -11,7 +11,7 @@ export function MessagesContainer({ children }: MessagesContainerProps){
         <ToastContainer
             position="top-center"
             autoClose={5000}
-            hideProgressBar={false}
+            hideProgressBar={true}
             newestOnTop={false}
             closeOnClick={true}
             rtl={false}
@@ -20,6 +20,7 @@ export function MessagesContainer({ children }: MessagesContainerProps){
             pauseOnHover
             theme="dark"
             transition={Bounce}
+            
      />
      </>       
     )
