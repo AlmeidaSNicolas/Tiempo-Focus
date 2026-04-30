@@ -3,6 +3,7 @@ import Home from "./Pages/Home";
 import { AboutPomodoro } from "./Pages/AboutPomodoro";
 import { NotFound } from "./Pages/NotFound";
 import { History } from "./Pages/History";
+import { Settings } from "./Pages/Settings";
 
 
 export const router = createBrowserRouter([
@@ -14,17 +15,21 @@ export const router = createBrowserRouter([
                 element: <Home />
             },
             {
+                path: 'History',
+                element: < History />
+            },
+            {
+                path: 'Settings',
+                element: <Settings />
+            },
+            {
                 path: 'AboutPomodoro',
-                element: < AboutPomodoro />
+                element: <AboutPomodoro />
             },
             {
                 path: '*',
                 element: <NotFound />
             },
-            {
-                path: 'History',
-                element: <History />
-            }
         ]
     }
 ]) 
