@@ -16,7 +16,7 @@ export function Tips(){
     }
 
     const tipsForNoActiveTask = {
-        workTime: <span>Proximo ciclo é de trabalho</span>,
+        workTime: <span>Proximo ciclo é de foco</span>,
         shortBreakTime: <span>Proximo ciclo é de descanso</span>,
         longBreakTime: <span>Proximo descanso sera longo </span>,
     }

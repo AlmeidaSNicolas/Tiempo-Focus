@@ -6,6 +6,7 @@ import image from '../../assets/imagens/pomofocus.png'
 import { Link } from 'react-router';
 
 export function AboutPomodoro() {
+
   return (
     <MainTemplate>
       <Container>

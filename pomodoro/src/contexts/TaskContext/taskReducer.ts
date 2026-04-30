@@ -60,10 +60,16 @@ export function TaskReducer(
       return {
         ...state,
         secondsRemaining: action.payload.secondsRemaining,
-        formattedSecondsRemaining: formatSecondsToMinutes(action.payload.secondsRemaining),
+        formattedSecondsRemaining: formatSecondsToMinutes(action.payload.secondsRemaining
+        ),
       };
     }
+     case TaskActionsType.CHANGE_SETTINGS: {
+      return { ...state, config: { ...action.payload } };
+    }
+  
   }
+  
 
   // Sempre deve retornar o estado
   return state;
