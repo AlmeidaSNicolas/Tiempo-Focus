@@ -1,9 +1,5 @@
 ✨ TIEMPO FOCUS - React Pomodoro Timer 🍅 🎯 Um sofisticado Timer de Pomodoro focado em gestão de tempo e produtividade máxima! Desenvolvido para aplicar e solidificar conceitos avançados de React, TypeScript e componentização.
 
-🌐 🚀 VEJA RODANDO AO VIVO 🚀 🌐
-Não quer instalar nada no seu computador? Sem problemas! Acesse a aplicação rodando diretamente na nuvem e comece a focar agora mesmo:
-🔗 Acessar Tiempo Focus https://tiempo-focus.onrender.com
-
 🛠️ 💻 TECNOLOGIAS E FERRAMENTAS 💻 🛠️ Este projeto foi construído utilizando o que há de melhor no ecossistema moderno:
 ⚛️ REACT JS: A biblioteca principal trazendo a mágica para a interface do usuário! ✨
 📘 TYPESCRIPT: Tipagem estática rigorosa para garantir segurança, previsibilidade e um código blindado! 🛡️
