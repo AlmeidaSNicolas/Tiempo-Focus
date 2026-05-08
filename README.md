@@ -1,4 +1,5 @@
 Tiempo Focus | Advanced Pomodoro Timer
+
 Tiempo Focus is a high-performance Pomodoro application designed for time management and maximum productivity. The project was developed to apply and solidify advanced concepts of the React and TypeScript ecosystem, focusing on modularity and code scalability.
 
 Tech Stack
